@@ -10,6 +10,7 @@ export interface FoodItem {
   kcal: number;
   imageUrl: string;
 }
+/** commentaire de test */
 
 // values from: http://dieteplaisir.canalblog.com/archives/2012/05/18/24268064.html
 export const FOOD_ITEMS: Array<FoodItem> = [
