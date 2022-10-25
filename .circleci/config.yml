@@ -16,7 +16,7 @@ jobs:
           - v1-dependencies-
 
       - run: npm ci
-      - run: npm audit fix --force
+      #- run: npm audit fix --force
 
       - save_cache:
           paths:
