@@ -3,7 +3,7 @@ jobs:
   build-test:
     docker:
       # specify the version you desire here
-      - image: circleci/node:14
+      - image: circleci/node:17
 
     steps:
       - checkout
