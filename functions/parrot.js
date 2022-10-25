@@ -1,4 +1,4 @@
-exports.handler = async function(event, context) {
+exports.handler = async function (event, context) {
   const requestBody = JSON.parse(event.body);
   const message = requestBody.message;
 
@@ -16,15 +16,22 @@ exports.handler = async function(event, context) {
       body: "This was a preflight call!",
     };
   }
-
-  if (message) {
+  try {
+    if (message) {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: message }),
+      };
+    } else {
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: "Please send a message !" }),
+      };
+    }
+  } catch (err) {
     return {
-      statusCode: 200,
-      body: JSON.stringify({ message: message }),
+      statusCode: 400,
+      body: JSON.stringify({ message: `An error occured : ${err}` }),
     };
   }
-  return {
-    statusCode: 400,
-    body: JSON.stringify({ message: "No message to present...  Please send a message !" }),
-  };
 };
