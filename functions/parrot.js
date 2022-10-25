@@ -25,6 +25,6 @@ exports.handler = async function(event, context) {
   }
   return {
     statusCode: 400,
-    body: JSON.stringify({ message: "Nothing to repeat :(" }),
+    body: JSON.stringify({ message: "No message to present...  Please send a message !" }),
   };
 };
