@@ -16,7 +16,6 @@ jobs:
           - v1-dependencies-
 
       - run: npm install
-      - run: npm link webpack
       - run: npm audit fix --force
 
       - save_cache:
